@@ -7,6 +7,7 @@ using BaseLibrary.Entities;
 using BaseLibrary.Responses;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using ServerLibrary.Data;
 using ServerLibrary.Helpers;
@@ -76,6 +77,19 @@ public class UserAccountRepository(IOptions<JwtSection> config, AppDbContext app
 
 		string jwtToken = GenerateToken(applicationUser, getRoleName!.Name!);
 		string refreshToken = GenerateRefreshToken();
+
+		// Save the Refresh token to the database
+		var findUser = await appDbContext.RefreshTokenInfos.FirstOrDefaultAsync(_ => _.UserId == applicationUser.Id);
+		if (findUser is not null)
+		{
+			findUser!.Token = refreshToken;
+			await appDbContext.SaveChangesAsync();
+		}
+		else
+		{
+			await AddToDatabase(new RefreshTokenInfo() { Token = refreshToken, UserId = applicationUser.Id });
+		}
+
 		return new LoginResponse(true, "Login Successful", jwtToken, refreshToken);
 
 	}
