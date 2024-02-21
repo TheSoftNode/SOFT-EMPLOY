@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-namespace Client.Helpers;
+namespace ClientLibrary.Helpers;
 
 public static class Serializations
 {

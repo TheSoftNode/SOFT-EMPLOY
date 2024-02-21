@@ -1,4 +1,5 @@
 ﻿using BaseLibrary.DTOs;
+using BaseLibrary.Responses;
 
 namespace ClientLibrary.Services.Contracts;
 
