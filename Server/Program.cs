@@ -45,7 +45,6 @@ builder.Services.AddAuthentication(options =>
 });
 
 
-
 builder.Services.AddScoped<IUserAccount, UserAccountRepository>();
 
 builder.Services.AddCors(options =>
