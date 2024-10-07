@@ -1,3 +1,51 @@
+:root {
+    --teal-color: #008080; /* Teal color */
+    --dark-green-color: #0E0E2D; /* Dark green */
+    --light-teal-color: #00BFFF; /* Light teal for hover effects */
+    --text-color: #F5F5F5; /* Light text color */
+}
+
+.container {
+    height: 100vh; /* Full height for vertical centering */
+}
+
+.card {
+    background: linear-gradient(to bottom, var(--dark-green-color), var(--teal-color)); /* Gradient background */
+    border: none; /* Remove border */
+}
+
+.btn-teal {
+    background-color: var(--teal-color); /* Teal button */
+    color: white; /* Button text color */
+}
+
+    .btn-teal:hover {
+        background-color: var(--light-teal-color); /* Light teal on hover */
+        transition: background-color 0.3s ease; /* Smooth transition */
+    }
+
+.form-control {
+    background-color: #1a1a1a; /* Dark background for inputs */
+    color: white; /* Input text color */
+}
+
+    .form-control::placeholder {
+        color: #A9A9A9; /* Placeholder text color */
+    }
+
+.text-teal {
+    color: var(--teal-color); /* Teal text */
+}
+
+
+
+
+
+
+
+
+
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
