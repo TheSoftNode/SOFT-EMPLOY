@@ -1,13 +1,13 @@
 ﻿@page "/identity/account/register"
 @layout AuthenticationLayout
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-6 col-sm-8">
+<div class="container d-flex align-items-center min-vh-100 mt-5 mb-5">
+    <div class="row justify-content-center w-100">
+        <div class="col-lg-5 col-md-7 col-sm-8">
             <EditForm Model="User" OnValidSubmit="HandleRegistration">
                 <DataAnnotationsValidator />
-                <div class="card bg-dark" style="border-radius: 10px; color: white;">
-                    <div class="card-header text-center fs-5 mt-1 mb-2">
+                <div class="card bg-dark shadow-lg" style="border-radius: 10px; color: white;">
+                    <div class="card-header text-center fs-5 mt-2 mb-3">
                         <h3 class="text-teal">Register an Account</h3>
                     </div>
                     <div class="text-center mb-3">
@@ -16,22 +16,22 @@
                     <div class="card-body">
                         <div class="form-group mt-3">
                             <label class="form-label">Full Name</label>
-                            <InputText @bind-Value="User.Fullname" class="form-control" placeholder="Enter your full name" />
+                            <InputText @bind-Value="User.Fullname" class="form-control form-control-lg" placeholder="Enter your full name" />
                         </div>
                         <div class="form-group mt-3">
                             <label class="form-label">Email</label>
-                            <InputText @bind-Value="User.Email" class="form-control" placeholder="Enter your email" />
+                            <InputText @bind-Value="User.Email" class="form-control form-control-lg" placeholder="Enter your email" />
                         </div>
                         <div class="form-group mt-3">
                             <label class="form-label">Password</label>
-                            <InputText type="password" @bind-Value="User.Password" class="form-control" placeholder="Enter your password" />
+                            <InputText type="password" @bind-Value="User.Password" class="form-control form-control-lg" placeholder="Enter your password" />
                         </div>
                         <div class="form-group mt-3">
                             <label class="form-label">Confirm Password</label>
-                            <InputText type="password" @bind-Value="User.ConfirmPassword" class="form-control" placeholder="Confirm your password" />
+                            <InputText type="password" @bind-Value="User.ConfirmPassword" class="form-control form-control-lg" placeholder="Confirm your password" />
                         </div>
                         <div class="form-group mt-3">
-                            <button class="btn btn-teal w-100" type="submit">Register</button>
+                            <button class="btn btn-teal w-100 btn-lg" type="submit">Register</button>
                         </div>
                     </div>
                     <div class="card-footer">

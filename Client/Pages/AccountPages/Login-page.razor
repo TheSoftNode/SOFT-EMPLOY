@@ -1,37 +1,41 @@
 ﻿@page "/identity/account/login"
 @layout AuthenticationLayout
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-6 col-sm-8">
+<div class="container h-100 d-flex align-items-center mt-4 justify-content-center">
+    <div class="row justify-content-center w-100">
+        <div class="col-lg-5 col-md-7 col-sm-8">
             <EditForm Model="User" OnValidSubmit="HandleLogin">
                 <DataAnnotationsValidator />
-                <div class="card bg-dark" style="border-radius: 10px; color: white;">
+                <div class="card shadow-lg bg-dark text-white" style="border-radius: 12px;">
                     <div class="card-header text-center fs-5 mb-2 mt-1">
                         <h3 class="text-teal">Login</h3>
                     </div>
                     <div class="text-center mb-3">
-                        <img style="border-radius: 20px" src="../images/logos/logo_1.png" height="50" width="50" alt="logo" />
+                        <img src="../images/logos/logo_1.png" height="50" width="50" alt="logo" style="border-radius: 20px;" />
                     </div>
                     <div class="card-body">
                         <div class="form-group mt-3">
                             <label class="form-label">Email</label>
-                            <InputText @bind-Value="User.Email" class="form-control" placeholder="Enter your email" />
+                            <InputText @bind-Value="User.Email" class="form-control form-control-lg border-light rounded-3"
+                                       style="background-color: #f5f5f5; color: #333;"
+                                       placeholder="Enter your email" />
                         </div>
                         <div class="form-group mt-3">
                             <label class="form-label">Password</label>
-                            <InputText type="password" @bind-Value="User.Password" class="form-control" placeholder="Enter your password" />
+                            <InputText type="password" @bind-Value="User.Password" class="form-control form-control-lg border-light rounded-3"
+                                       style="background-color: #f5f5f5; color: #333;"
+                                       placeholder="Enter your password" />
                         </div>
-                        <div class="form-group mt-3">
-                            <button class="btn btn-teal w-100" type="submit">Login</button>
+                        <div class="form-group mt-4">
+                            <button class="btn btn-teal w-100 btn-lg" type="submit" style="border-radius: 25px;">Login</button>
                         </div>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer text-center">
                         <div class="text-center">
-                            Don't have an account? |
-                            <a class="btn-link text-teal" href="identity/account/register">Sign Up</a>
+                            <span>Don't have an account? |</span>
+                            <a class="btn-link  fw-bold ms-1" href="identity/account/register">Sign Up</a>
                         </div>
-                        <ValidationSummary class="text-danger" />
+                        <ValidationSummary class="text-danger mt-2" />
                     </div>
                 </div>
             </EditForm>

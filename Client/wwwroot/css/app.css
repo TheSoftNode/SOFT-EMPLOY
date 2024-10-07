@@ -38,11 +38,13 @@
 }
 
 
+.bg-teal {
+    background-color: var(--teal-color); /* Reusing teal for uniformity */
+}
 
-
-
-
-
+.bg-dark-green {
+    background-color: var(--dark-green-color); /* Dark green background */
+}
 
 
 
@@ -55,7 +57,7 @@ h1:focus {
 }
 
 a, .btn-link {
-    color: #0071c1;
+    color: var(--dark-green-color);
 }
 
 .btn-primary {
